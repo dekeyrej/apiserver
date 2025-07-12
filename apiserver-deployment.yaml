@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
         - name: apiserver
-          image: ghcr.io/dekeyrej/apiserver:dev
+          image: ghcr.io/dekeyrej/apiserver:latest
           imagePullPolicy: Always
           resources:
             requests:
