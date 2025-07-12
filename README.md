@@ -49,7 +49,7 @@ linkStyle 4,5 stroke:#00F,color:blue
 
 ## ⚙️ Configuration
 Settings are loaded from config.py. Example:
-```json
+```python
 config = {
     "redis_url": "redis://redis.redis:6379/0",
     "update_channel": "update"
