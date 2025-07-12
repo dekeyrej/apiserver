@@ -59,15 +59,19 @@ config = {
 
 ## 🧪 Local Development
 1. Install dependencies
+```sh
 pip install fastapi uvicorn redis sse-starlette
-
+```
 
 2. Run the server
+```sh
 python apiserver.py
-
+```
 
 Or with hot reload:
+```sh
 uvicorn apiserver:app --reload
+```
 
 
 ## 🔐 CORS
