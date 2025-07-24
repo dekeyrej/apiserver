@@ -8,7 +8,8 @@ RUN pip install -r requirements.txt
 #Operational stage
 FROM python:3.12-slim
 COPY --from=builder /opt/venv /opt/venv
-ENV PYTHONUNBUFFERED=1 
+ENV PATH="/opt/venv/bin:$PATH" \
+    PYTHONUNBUFFERED=1
 WORKDIR /code
 COPY config.py .
 COPY apiserver.py .
