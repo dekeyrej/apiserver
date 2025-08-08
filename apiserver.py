@@ -45,7 +45,7 @@ app = FastAPI(lifespan=lifespan)
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:3001"],  # for local testing
+    allow_origins=["http://localhost:3001"],  # for local testing of webdisplay
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
