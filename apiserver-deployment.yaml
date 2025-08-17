@@ -27,6 +27,8 @@ spec:
             limits:
               cpu: 1000m
               memory: 256Mi
+          ports:
+            - containerPort: 8000
           livenessProbe:
             httpGet:
               path: /live
