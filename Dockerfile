@@ -13,5 +13,5 @@ ENV PATH="/opt/venv/bin:$PATH" \
 WORKDIR /code
 COPY config.py .
 COPY apiserver.py .
-EXPOSE 10255
+# EXPOSE 8000
 CMD ["sh", "-c", "python /code/apiserver.py"]

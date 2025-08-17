@@ -107,6 +107,19 @@ async def stream_events(request: Request):
 
     return EventSourceResponse(event_generator())
 
+@app.get("/ready")
+async def readiness_probe():
+    try:
+        pong = await redis.ping()
+        if pong:
+            return JSONResponse(content={"status": "ready"})
+    except Exception:
+        return JSONResponse(status_code=503, content={"status": "unavailable"})
+
+@app.get("/live")
+async def liveness_probe():
+    return JSONResponse(content={"status": "alive"})
+
 async def redis_listener():
     pubsub = redis.pubsub()
     await pubsub.subscribe(UPDATE_CHANNEL)
