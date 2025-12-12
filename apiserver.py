@@ -77,7 +77,7 @@ async def broadcast(payload: dict):
 
 @app.put("/webcontrol/{command}")
 async def send_webcontrol_command(command: str):
-    valid_commands = {'pp', 'fwd', 'rew', 'out'}
+    valid_commands = {'pp', 'fwd', 'rew', 'out', 'reload'}
     if command not in valid_commands:
         return JSONResponse(status_code=400, content={"error": "Invalid command"})
 
